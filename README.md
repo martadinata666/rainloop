@@ -1,4 +1,4 @@
-# Rainloop Docker
+# Rainloop CE Docker 
 
 # Usage
 ```
