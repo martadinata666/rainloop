@@ -16,9 +16,9 @@ User: admin
 Pass: 12345
 ```
 # Rainloop Login
+http://ip-address:8085
 ```
 Username: youremail@domain.tld
 Password: yourpassword
-
 ```
 The email is your email that registered to the domain mailbox. Assume GMail mailbox added then your login **bla3@gmail.com** and **password**
