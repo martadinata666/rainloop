@@ -6,6 +6,7 @@ COPY ./httpd.conf /etc/apache2/httpd.conf
 RUN apk add  --no-cache nano apache2 unzip php7-apache2 php7-json php7-dom php7-curl php7-iconv php7-openssl php7-pdo_sqlite apache2-ssl bash
 RUN unzip rainloop-community-latest.zip -d /var/www/localhost/htdocs/
 RUN adduser --disabled-password --uid 1000 rainloop
+RUN chown -R rainloop:rainloop /var/www/localhost/htdocs/
 RUN rm /var/www/localhost/htdocs/index.html
 RUN rm /var/www/localhost/htdocs/rainloop-community-latest.zip
 EXPOSE 80
