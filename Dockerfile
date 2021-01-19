@@ -8,6 +8,6 @@ RUN unzip rainloop-community-latest.zip -d /var/www/localhost/htdocs/
 RUN adduser --disabled-password --uid 1000 rainloop
 RUN rm /var/www/localhost/htdocs/index.html
 RUN rm /var/www/localhost/htdocs/rainloop-community-latest.zip
-EXPOSE 80
-#CMD /usr/sbin/httpd -DFOREGROUND -f /etc/apache2/httpd.conf
-CMD /usr/bin/bash
+EXPOSE 443
+CMD /usr/sbin/httpd -DFOREGROUND -f /etc/apache2/httpd.conf
+#CMD /usr/bin/bash
