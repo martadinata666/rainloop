@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.13
 WORKDIR /var/www/localhost/htdocs/
 
 # Download master zip and copy apache, php conf
