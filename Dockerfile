@@ -26,10 +26,10 @@ EXPOSE 443
 USER rainloop
 
 # HEALTHCHECK
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD curl -f http://localhost/ || exit 1
+#HEALTHCHECK --interval=5m --timeout=3s \
+#  CMD curl -f http://localhost/ || exit 1
 
 # Execute command
-CMD /usr/sbin/httpd -DFOREGROUND -e
+CMD /usr/sbin/httpd -DFOREGROUND -e 5
 
 #CMD /usr/bin/bash
