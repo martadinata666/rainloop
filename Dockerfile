@@ -12,7 +12,7 @@ RUN unzip rainloop-community-latest.zip -d /var/www/localhost/htdocs/
 
 # Set permission
 RUN adduser --disabled-password --uid 1000 rainloop
-RUN chown -R rainloop:rainloop /var/www/
+RUN chown -R rainloop:rainloop /var/www/localhost/htdocs/
 
 # Clean index and zip
 RUN rm /var/www/localhost/htdocs/index.html
@@ -23,7 +23,7 @@ EXPOSE 80
 EXPOSE 443
 
 # default user
-USER rainloop
+#USER rainloop
 
 # HEALTHCHECK
 #HEALTHCHECK --interval=5m --timeout=3s \
