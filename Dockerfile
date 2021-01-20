@@ -30,6 +30,6 @@ USER rainloop
 #  CMD curl -f http://localhost/ || exit 1
 
 # Execute command
-CMD /usr/sbin/httpd -DFOREGROUND -e 5
+CMD /usr/sbin/httpd -DFOREGROUND -e error
 
 #CMD /usr/bin/bash
