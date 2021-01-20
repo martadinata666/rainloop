@@ -30,6 +30,6 @@ USER rainloop
 #  CMD curl -f http://localhost/ || exit 1
 
 # Execute command
-CMD /usr/sbin/httpd -DFOREGROUND
+CMD /usr/sbin/httpd -DFOREGROUND -E /var/www/localhost/htdocs/httpd-logs.txt
 
 #CMD /usr/bin/bash
