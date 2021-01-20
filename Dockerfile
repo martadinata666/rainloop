@@ -12,7 +12,7 @@ RUN unzip rainloop-community-latest.zip -d /var/www/localhost/htdocs/
 
 # Set permission
 RUN adduser --disabled-password --uid 1000 rainloop
-RUN chown -R rainloop:rainloop /var/www/localhost/htdocs/
+RUN chown -R rainloop:rainloop /var/www/
 
 # Clean index and zip
 RUN rm /var/www/localhost/htdocs/index.html
@@ -30,6 +30,6 @@ USER rainloop
 #  CMD curl -f http://localhost/ || exit 1
 
 # Execute command
-CMD /usr/sbin/httpd -DFOREGROUND -E /var/www/localhost/htdocs/httpd-logs.txt
+CMD /usr/sbin/httpd -DFOREGROUND -f /etc/apache2/httpd.conf
 
 #CMD /usr/bin/bash
