@@ -2,7 +2,7 @@ FROM alpine:3.13
 WORKDIR /var/www/localhost/htdocs/
 ARG RELEASE
 # Download master zip and copy apache, php conf
-ADD  https://www.rainloop.net/repository/webmail/rainloop-community-$RELEASE.zip /var/www/localhost/htdocs/
+ADD https://github.com/RainLoop/rainloop-webmail/releases/download/v$RELEASE/rainloop-$RELEASE.zip /var/www/localhost/htdocs/
 COPY ./php.ini /etc/php7/php.ini
 COPY ./httpd.conf /etc/apache2/httpd.conf
 
