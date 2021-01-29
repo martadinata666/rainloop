@@ -16,7 +16,7 @@ RUN chown -R rainloop:rainloop /var/www/localhost/htdocs/
 
 # Clean index and zip
 RUN rm /var/www/localhost/htdocs/index.html
-RUN rm /var/www/localhost/htdocs/rainloop-community-latest.zip
+RUN rm /var/www/localhost/htdocs/rainloop-$RELEASE.zip
 
 # Show port
 EXPOSE 80
