@@ -22,9 +22,6 @@ RUN rm /var/www/localhost/htdocs/rainloop-$RELEASE.zip
 EXPOSE 80
 EXPOSE 443
 
-# default user
-#USER rainloop
-
 # HEALTHCHECK
 #HEALTHCHECK --interval=5m --timeout=3s \
 #  CMD curl -f http://localhost/ || exit 1
@@ -32,4 +29,5 @@ EXPOSE 443
 # Execute command
 CMD /usr/sbin/httpd -DFOREGROUND -f /etc/apache2/httpd.conf
 
-#CMD /usr/bin/bash
+# User
+User rainloop
