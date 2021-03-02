@@ -31,3 +31,6 @@ CMD /usr/sbin/httpd -DFOREGROUND -f /etc/apache2/httpd.conf
 
 # User
 #User rainloop
+
+# Volume
+VOLUME /var/www/localhost/htdocs
