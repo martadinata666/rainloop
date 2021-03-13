@@ -5,8 +5,7 @@ ARG RELEASE=1.15.0
 COPY ./php.ini /etc/php7/php.ini
 COPY ./httpd.conf /etc/apache2/httpd.conf
 # Install apache
-RUN apk add  --no-cache nano apache2 unzip php7-apache2 php7-json php7-dom php7-curl php7-iconv php7-openssl php7-pdo_sqlite apache2-ssl sh
-
+RUN apk add  --no-cache nano apache2 unzip php7-apache2 php7-json php7-dom php7-curl php7-iconv php7-openssl php7-pdo_sqlite apache2-ssl
 
 # Set permission
 RUN adduser --disabled-password --uid 1000 rainloop
