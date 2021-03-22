@@ -1,6 +1,5 @@
 # This file is a template, and might need editing before it works on your project.
 variables:
-<<<<<<< HEAD
   RELEASE: ""
   DOCKERHOST: tcp://docker:2375
   DOCKER_DRIVER: overlay2
@@ -8,17 +7,10 @@ variables:
 docker-build-buildx:
   # Official docker image.
   image: registry.gitlab.com/dedyms/docker-with-buildx:0.5.1
-=======
-  RELEASE: "1.15.0"
-docker-build-master:
-  # Official docker image.
-  image: docker:latest
->>>>>>> e5daea3c00e126ab04d04abbe0345c01b93dcb59
   stage: build
   services:
     - docker:dind
   before_script:
-<<<<<<< HEAD
     - export RELEASE="1.15.0"
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     - docker login -u "$CI_DOCKERHUB_REGISTRY_USER" -p "$CI_DOCKERHUB_REGISTRY_PASSWORD" $CI_DOCKERHUB_REGISTRY
@@ -37,18 +29,3 @@ docker-build-master:
     changes:
       - Dockerfile
       - .gitlab-ci.yml
-=======
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker login -u "$CI_DOCKERHUB_REGISTRY_USER" -p "$CI_DOCKERHUB_REGISTRY_PASSWORD" $CI_DOCKERHUB_REGISTRY
-  script:
-    - docker build --pull -t "$CI_REGISTRY_IMAGE" -t "$CI_REGISTRY_IMAGE:$RELEASE" -t "$CI_DOCKERHUB_REGISTRY_IMAGE" -t "$CI_DOCKERHUB_REGISTRY_IMAGE:$RELEASE" .
-    - docker push "$CI_REGISTRY_IMAGE"
-    - docker push "$CI_REGISTRY_IMAGE:$RELEASE"
-    - docker push "$CI_DOCKERHUB_REGISTRY_IMAGE"
-    - docker push "$CI_DOCKERHUB_REGISTRY_IMAGE:$RELEASE"
-  only:
-    refs:
-      - master
-    changes:
-      - Dockerfile
->>>>>>> e5daea3c00e126ab04d04abbe0345c01b93dcb59
