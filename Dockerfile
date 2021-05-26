@@ -1,6 +1,6 @@
 FROM alpine:3.13
 WORKDIR /var/www/localhost/htdocs/
-ARG RELEASE=1.16.0
+ARG RELEASE
 #Copy apache, php conf
 COPY ./php.ini /etc/php7/php.ini
 COPY ./httpd.conf /etc/apache2/httpd.conf
